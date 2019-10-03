@@ -1,0 +1,19 @@
+.DS_Store
+
+# dependencies
+node_modules
+
+# testing
+coverage
+coverage.json
+
+# production
+dist
+build
+lib
+
+# logs
+*.log*
+
+# other
+package-lock.json

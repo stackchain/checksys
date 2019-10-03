@@ -1,0 +1,49 @@
+{
+  "name": "checksys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "sh scripts/test.sh",
+    "watch": "chokidar contracts/*.sol contracts/**/*.sol test/**/*.sol test/*.js test/**/*.js test/**/**/*.js -c 'sh scripts/test.sh' --silent",
+    "coverage": "sh scripts/coverage.sh",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:sol": "solium -d .",
+    "lint:sol:fix": "solium -d . --fix",
+    "lint:all": "npm run lint && npm run lint:sol",
+    "lint:all:fix": "npm run lint:fix && npm run lint:sol:fix",
+    "compile": "truffle compile --optimize-runs 200",
+    "ganache-cli": "node_modules/.bin/ganache-cli -i 150 --gasLimit 90000000 --account=0x65cab0b67232802a4ed2c5d0358e3b7df15b41f584294f68a9b467667d4957ec,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501200,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501201,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501202,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501203,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501204,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501205,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501206,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501207,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501208,1000000000000000000000000 --account=0x2bdd21761a483f71054e14f5b827213567971c676928d9a1808cbfa4b7501209,1000000000000000000000000",
+    "migrate:local": "truffle migrate --network=development --reset --all",
+    "migrate:ganache": "truffle migrate --network=ganache --reset --all",
+    "migrate:ropsten": "truffle migrate --network=ropsten --reset --all",
+    "migrate:kovan": "truffle migrate --network=kovan --reset --all",
+    "migrate:rinkeby": "truffle migrate --network=rinkeby --reset --all",
+    "migrate:mainnet": "truffle migrate --network=mainnet"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "chokidar": "^2.0.4",
+    "eslint": "^5.10.0",
+    "ethereumjs-testrpc": "^6.0.3",
+    "ganache-cli": "^6.2.3",
+    "openzeppelin-solidity": "^2.0.0",
+    "solc": "^0.5.1",
+    "solidity-coverage": "^0.5.11",
+    "solium": "^1.1.8",
+    "truffle": "^4.1.14",
+    "truffle-assertions": "^0.7.1",
+    "truffle-hdwallet-provider": "^1.0.2",
+    "web3": "^1.0.0-beta.37"
+  },
+  "dependencies": {
+    "zeppelin-solidity": "^1.12.0"
+  }
+}
